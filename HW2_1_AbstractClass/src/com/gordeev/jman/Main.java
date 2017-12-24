@@ -11,7 +11,7 @@ public class Main {
 
         Shape myTriangle = new Triangle(a, b, c);
         Shape mySquare = new Rectangle(a, b, c, d);
-        Circle myCircle = new Circle(a, b);
+        Shape myCircle = new Circle(a, b);
 
         System.out.println("Triangle perimeter " + myTriangle.getPerimeter());
         System.out.println("Triangle Area " + myTriangle.getArea());
