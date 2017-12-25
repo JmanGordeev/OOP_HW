@@ -8,10 +8,6 @@ public class Group {
     private int count;
     private String nameGroup;
 
-    Group(Student[] students) {
-        this.students = students;
-    }
-
     Group(String nameGroup) {
         setNameGroup(nameGroup);
         setCount();
@@ -59,7 +55,7 @@ public class Group {
 
         System.out.println("deleting " + lastName + "..........");
         for (int i = 0; i < students.length; i++) {
-            if (students[i].getLastName().equals(lastName)) {
+            if (!(students[i] == null) && students[i].getLastName().equals(lastName)) {
                 students[i] = null;
                 switchIf = false;
             }
@@ -95,22 +91,31 @@ public class Group {
     }
 
     public void sortArray() {
-        char[] lastNames = new char[students.length];
-        for (int i = 0; i < lastNames.length; i++) {
+
+        int countCharLength = students.length;
+        for (Student student : students) {
+            if (student == null) countCharLength--;
+        }
+        char[] lastNames = new char[countCharLength];
+        for (int i = 0; i < countCharLength; i++) {
             if (!(students[i] == null)) lastNames[i] = students[i].getLastName().charAt(0);
         }
 
+
         Arrays.sort(lastNames);
 
-        for (int i = 0; i < lastNames.length - 1; i++) {
+        for (int i = 0; i < lastNames.length; i++) {
             char a = lastNames[i];
-            for (int j = i; j <= students.length - i - 1; j++) {
-                if ((!(students[j] == null)) && students[j].getLastName().charAt(0) < a) {
-                    Student temp = students[j];
-                    students[j] = students[j - 1];
-                    students[j - 1] = temp;
+            if (!(a == '\u0000')) {
+                for (int j = i; j <= students.length - i - 1; j++) {
+                    if ((!(students[j] == null)) && students[j].getLastName().charAt(0) < a) {
+                        Student temp = students[j];
+                        students[j] = students[j - 1];
+                        students[j - 1] = temp;
+                    }
                 }
             }
+
         }
     }
 
