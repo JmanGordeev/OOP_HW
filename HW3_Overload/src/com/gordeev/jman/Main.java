@@ -24,11 +24,11 @@ public class Main {
         group.addStudent(s4);
         group.addStudent(s5);
         group.addStudent(s6);
-        group.addStudent(s7);
-        group.addStudent(s8);
-        group.addStudent(s9);
-        group.addStudent(s10);
-        group.addStudent(s11);//11 element
+//        group.addStudent(s7);
+//        group.addStudent(s8);
+//        group.addStudent(s9);
+//        group.addStudent(s10);
+//        group.addStudent(s11);//11 element
 
         System.out.println("-------------------------------------------------------");
 

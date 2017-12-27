@@ -90,39 +90,18 @@ public class Group {
         }
     }
 
-    public void sortArray() {
 
-        int countCharLength = students.length;
-        for (Student student : students) {
-            if (student == null) countCharLength--;
-        }
-        char[] lastNames = new char[countCharLength];
-        for (int i = 0; i < countCharLength; i++) {
-            if (!(students[i] == null)) lastNames[i] = students[i].getLastName().charAt(0);
-        }
+    public void sortStudents() {
 
+        Arrays.sort(students, (a, b) -> CheckedOnNull.NoNull(a, b) != CheckedOnNull.NOT_NULL ? CheckedOnNull.NoNull(a, b) : a.getLastName().compareTo(b.getLastName()));
 
-        Arrays.sort(lastNames);
-
-        for (int i = 0; i < lastNames.length; i++) {
-            char a = lastNames[i];
-            if (!(a == '\u0000')) {
-                for (int j = i; j <= students.length - i - 1; j++) {
-                    if ((!(students[j] == null)) && students[j].getLastName().charAt(0) < a) {
-                        Student temp = students[j];
-                        students[j] = students[j - 1];
-                        students[j - 1] = temp;
-                    }
-                }
-            }
-
-        }
     }
 
 
     @Override
     public String toString() {
-        sortArray();
+//        sortArray();
+        sortStudents();
         StringBuilder out = new StringBuilder();
         for (Student student : students) {
             if (!(student == null)) out.append(student.toString()).append("\n");
