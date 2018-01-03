@@ -1,0 +1,1 @@
+cat cat cat dog1 man1 woman house1 hello1 word cat fish1 java 
