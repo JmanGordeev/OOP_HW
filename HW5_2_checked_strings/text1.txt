@@ -1,1 +1,11 @@
-cat cat cat dog man woman house hello word cat fish java 
+RAR and UnRAR for Unix read configuration information from .rarrc file
+  in a user's home directory (stored in HOME environment variable)
+  or in /etc directory.
+
+  WinRAR and UnRAR for Windows read configuration information from rar.ini file,
+  placed in the same directory as the rar.exe file.
+   RAR supports only RAR format archives, which have .rar file name
+    extension by default. ZIP and other formats are not supported.
+    Even if you specify .zip extension when creating an archive, it will
+    still be in RAR format. Windows users may install WinRAR, which supports
+    more archive types including RAR and ZIP formats.

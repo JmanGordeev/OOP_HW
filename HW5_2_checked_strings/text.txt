@@ -1,1 +1,15 @@
-cat cat cat dog1 man1 woman house1 hello1 word cat fish1 java 
+ RAR is a console application allowing to manage archive files
+  in command line mode. RAR provides compression, encryption,
+  data recovery and many other functions described in this manual.
+
+    RAR supports only RAR format archives, which have .rar file name
+  extension by default. ZIP and other formats are not supported.
+  Even if you specify .zip extension when creating an archive, it will
+  still be in RAR format. Windows users may install WinRAR, which supports
+  more archive types including RAR and ZIP formats.
+
+    WinRAR provides both graphical user interface and command line mode.
+  While console RAR and GUI WinRAR have the similar command line syntax,
+  some differences exist. So it is recommended to use this rar.txt manual
+  for console RAR (rar.exe in case of Windows version) and winrar.chm
+  WinRAR help file for GUI WinRAR (winrar.exe).

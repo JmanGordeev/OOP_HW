@@ -1,25 +1,35 @@
 package com.company;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        try (Scanner sc = new Scanner(new FileReader("text.txt"));
-             Scanner sc1 = new Scanner(new FileReader("text1.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("text.txt"));
+             BufferedReader reader1 = new BufferedReader(new FileReader("text1.txt"))) {
 
-            String[] a = sc.nextLine().split("[, .]");
-            String[] b = sc1.nextLine().split("[, .]");
-            writeNewFile(a, b);
+            writeNewFile(fileScan(reader), fileScan(reader1));
 
         } catch (IOException e) {
             System.out.println("ERROR!!");
         }
+
+    }
+
+    private static String[] fileScan(BufferedReader reader) {
+
+        StringBuilder sB = new StringBuilder();
+        String line;
+        try {
+            while ((line = reader.readLine()) != null) {
+                sB.append(line);
+            }
+        } catch (IOException e) {
+            System.out.println("ERROR!!");
+        }
+
+        return sB.toString().split("[, .]");
 
     }
 
@@ -37,10 +47,10 @@ public class Main {
 
         StringBuilder out = new StringBuilder();
 
-        for (String f : a) {
-            for (String f1 : b) {
-                if (f.equals(f1)) {
-                    out.append(f).append(" ");
+        for (String file : a) {
+            for (String file2 : b) {
+                if (file.equals(file2)) {
+                    out.append(file).append(" ");
                     break;
                 }
             }
