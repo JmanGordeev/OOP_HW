@@ -9,7 +9,6 @@ public class Main {
             FactorialThread factorialThread = new FactorialThread(i);
             Thread thread = new Thread(factorialThread);
             thread.start();
-            System.out.println(thread.getName() + " -> " + i + "!=" + factorialThread.calculateFactorial(i));
 
         }
     }

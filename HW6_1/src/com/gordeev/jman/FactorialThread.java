@@ -37,6 +37,7 @@ public class FactorialThread implements Runnable {
                 System.out.println(th.getName() + " interrupted !!");
                 break;
             }
+            System.out.println(th.getName() + " -> " + i + "!=" + calculateFactorial(i));
         }
     }
 }

@@ -1,4 +1,4 @@
- RAR is a console application allowing to manage archive files
+RAR is a console application allowing to manage archive files
   in command line mode. RAR provides compression, encryption,
   data recovery and many other functions described in this manual.
 
