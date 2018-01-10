@@ -32,7 +32,7 @@ public class FactorialThread implements Runnable {
     public void run() {
         Thread th = Thread.currentThread();
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = n; i <= n; i++) {
             if (th.isInterrupted()) {
                 System.out.println(th.getName() + " interrupted !!");
                 break;
