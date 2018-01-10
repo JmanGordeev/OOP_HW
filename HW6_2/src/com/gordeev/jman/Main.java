@@ -19,10 +19,19 @@ public class Main {
         ArraySumm arrayThree = new ArraySumm(array, array.length / 4 * 2 + 1, array.length / 4 * 3, threadThree);
         ArraySumm arrayFour = new ArraySumm(array, array.length / 4 * 3 + 1, array.length - 1, threadFour);
 
-        threadOne.start();
-        threadTwo.start();
-        threadThree.start();
-        threadFour.start();
+        try {
+            threadOne.start();
+            threadTwo.start();
+            threadThree.start();
+            threadFour.start();
+
+            threadOne.join();
+            threadTwo.join();
+            threadThree.join();
+            threadFour.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         long t1 = System.currentTimeMillis();
 
