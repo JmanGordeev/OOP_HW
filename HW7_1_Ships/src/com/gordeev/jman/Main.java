@@ -10,9 +10,10 @@ public class Main {
         Ship ship2 = new Ship("ship2", dock);
         Ship ship3 = new Ship("ship3", dock);
 
-        new Thread(ship1).start();
-        new Thread(ship2).start();
-        new Thread(ship3).start();
+        ship1.uploading();
+        ship2.uploading();
+        ship3.uploading();
+
 
     }
 }

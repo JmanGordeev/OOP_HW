@@ -17,24 +17,19 @@ public class Ship implements Runnable {
     @Override
     public void run() {
 
-        uploading();
+        dock.unloading(countCargo, name);
 
     }
 
-    public synchronized void uploading() {
+    public void uploading() {
 
-        for (; countCargo != 0; ) {
+        Thread thread = new Thread(this);
+        thread.start();
 
-            countCargo = countCargo - 1;
-            dock.setCount(dock.getCount());
-
-            System.out.println("Ship " + getName() + " uploading " + "count Cargo" + getCountCargo() + " " + Thread.currentThread().getName());
-
-            try {
-                wait(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
